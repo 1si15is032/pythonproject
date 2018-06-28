@@ -1,0 +1,57 @@
+create database tweet;
+use tweet;
+
+ create table imp(
+    name varchar(15),
+    uname varchar(2058)
+     );
+
+insert into imp values('navya','https://www.geeksforgeeks.org/');
+
+
+<?php
+
+$dbhost = 'localhost';
+$dbuser = 'root';
+$dbpass = '';
+
+
+$conn  = mysqli_connect($dbhost,$dbuser,'');
+$link = mysqli_connect("localhost", "root", "");
+
+if(! $conn){
+  die('Could not connect connect: ') ;
+}
+
+echo 'Successfully Connected';
+
+
+$db='tww';
+$conn  = mysqli_connect($dbhost,$dbuser,'',$db);
+$link = mysqli_connect("localhost", "root", "", "tww");
+
+
+
+http://localhost/Newproj/create_connect.php
+
+
+
+// Create connection
+//$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "INSERT INTO imp(uname)
+VALUES ('navya.umashankar@gmail.com')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+
+$conn->close();
+?>
